@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+   
+
+</head>
+
+<body>
+    <div class="total">
+        <div class="left-head">
+            <div id="weather">
+                <span></span>
+                <span></span>
+            </div> 
+            
+        </div>
+        <div class="text">
+            <form class="search" action="http://www.google.com/search" method="get">
+                <button><i class="fas fa-search"></i></button>
+                <input name="q" type="text" placeholder="Search">
+            </form>
+            <h2 id="clock">00:00:00</h2>
+            <form class="hidden log-in" id="login-form">
+                <input required maxlength="15" type="text" placeholder="what is your name?" />
+                <button>Log In</button>
+            </form>
+            <h1 id="greeting" class="hidden"></h1>
+            <!-- <form id="todo-form">
+                <input type="text" placeholder="Write a To Do" required />
+            </form>
+            <ul id="todo-list"></ul> -->
+            <div id="quote">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="right-head">
+            <button class="modal-btn">For you</button>
+            <div class="modal hidden">
+                <div class="modal__overlay"></div>
+                <div class="modal-box">
+                    <div class="modal-nav">
+                        <div>Plus</div>
+                        <button class="button-x">X</button>
+                    </div>
+                    <div class="modal-list">
+                        <div class="first-line">
+                            <a href="https://www.youtube.com/" class="app-icon">
+                                <img class="app-img"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png" />
+                            </a>
+                            <a href="https://www.naver.com/" class="app-icon">
+                                <img class="app-img"
+                                    src="https://play-lh.googleusercontent.com/Kbu0747Cx3rpzHcSbtM1zDriGFG74zVbtkPmVnOKpmLCS59l7IuKD5M3MKbaq_nEaZM" />
+                            </a>
+                        </div>
+                        <div class="last-line">
+                            <a href="https://www.google.co.kr/?gws_rd=ssl#spf=1604143308132" class="app-icon">
+                                <img src="data:image/png;base64,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"
+                                    class="app-img" />
+                            </a>
+                            <a href="https://blog.naver.com/daeyeubdanbi" class="app-icon">
+                                <img src="https://www.apkmirror.com/wp-content/uploads/2019/07/5d23fcafce956.png"
+                                    class="app-img" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="todo-total">
+                        <form id="todo-form">
+                            <input type="text" placeholder="Write a To Do" required />
+                        </form>
+                        <ul id="todo-list"></ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="JS/modal.js"></script>
+    <!-- <script src="JS/background.js"></script> -->
+    <script src="JS/clock.js"></script>
+    <script src="JS/greeting.js"></script>
+    <script src="JS/quotes.js"></script>
+    <script src="JS/weather.js"></script>
+    <script
+    src="https://kit.fontawesome.com/6478f529f2.js"
+    crossorigin="anonymous"
+  ></script>
+</body>
+
+</html>
